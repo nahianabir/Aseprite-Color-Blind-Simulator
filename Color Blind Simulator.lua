@@ -22,7 +22,7 @@ dlg:show()
 
 local data = dlg.data
 if not data.ok then
-  return -- user canceled
+  return 
 end
 
 -- transformation matrices
@@ -65,14 +65,13 @@ end
 local srcImage = srcCel.image:clone()
 local destImage = Image(srcImage.spec)
 
--- Shortcuts for pixelColor functions
+
 local pc = app.pixelColor
 
 
 for y = 0, srcImage.height - 1 do
   for x = 0, srcImage.width - 1 do
     local pixel = srcImage:getPixel(x, y)
-    -- Extract RGBA from the pixel
     local r = pc.rgbaR(pixel)
     local g = pc.rgbaG(pixel)
     local b = pc.rgbaB(pixel)
@@ -89,8 +88,8 @@ for y = 0, srcImage.height - 1 do
 end
 
 
-local newLayer = newSprite.layers[1]       -- The default layer
-local newCel = newLayer:cel(frameIndex)    -- Cel #1 in that layer
+local newLayer = newSprite.layers[1]       
+local newCel = newLayer:cel(frameIndex)    
 newCel.image = destImage
 
 -- Done!  
