@@ -1,6 +1,7 @@
 ----------------------------------------------------------------
 -- Color Blindness Simulator (Aseprite 1.3.10.1-compatible) --
 -- only works for background layer--
+-- By github.com/nahianabir
 ----------------------------------------------------------------
 
 
